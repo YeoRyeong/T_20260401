@@ -8,8 +8,9 @@ using namespace std;
 
 int SDL_main(int argc, char* argv[])
 {
-	int X = 100;
-	int Y = 100;
+	int Speed = 10;
+	int X = 0;
+	int Y = 0;
 
 
 	bool bIsRunning = true;
@@ -43,22 +44,22 @@ int SDL_main(int argc, char* argv[])
 		{
 			if (KeyCode == SDLK_w) 
 			{
-				Y--;
+				Y -= Speed;
 			}
 		
 			if (KeyCode == SDLK_s)
 			{
-				Y++;
+				Y += Speed;
 			}
 		
 			if (KeyCode == SDLK_a)
 			{
-				X--;
+				X -= Speed;
 			}
 		
 			if (KeyCode == SDLK_d)
 			{
-				X++;
+				X += Speed;
 			}
 
 			if (KeyCode == SDLK_ESCAPE)
