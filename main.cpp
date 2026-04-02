@@ -12,6 +12,8 @@ int SDL_main(int argc, char* argv[])
 	int X = 0;
 	int Y = 0;
 
+	int W = 100;
+	int H = 100;
 
 	bool bIsRunning = true;
 
@@ -24,7 +26,7 @@ int SDL_main(int argc, char* argv[])
 		SDL_Event MyEvent;
 		SDL_PollEvent(&MyEvent);
 		
-		SDL_Rect MyRect = { X, Y, 100, 100 };
+		SDL_Rect MyRect = { X, Y, W, H };
 		SDL_Keycode KeyCode = MyEvent.key.keysym.sym;
 
 		if (MyEvent.type == SDL_QUIT)
@@ -60,6 +62,26 @@ int SDL_main(int argc, char* argv[])
 			if (KeyCode == SDLK_d)
 			{
 				X += Speed;
+			}
+
+			if (KeyCode == SDLK_UP)
+			{
+				H -= Speed;
+			}
+
+			if (KeyCode == SDLK_DOWN)
+			{
+				H += Speed;
+			}
+
+			if (KeyCode == SDLK_LEFT)
+			{
+				W -= Speed;
+			}
+
+			if (KeyCode == SDLK_RIGHT)
+			{
+				W += Speed;
 			}
 
 			if (KeyCode == SDLK_ESCAPE)
